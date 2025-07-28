@@ -3,12 +3,6 @@
 -- Add any additional keymaps here
 
 vim.keymap.set(
-  "n",
-  "<leader>sx",
-  require("telescope.builtin").resume,
-  { noremap = true, silent = true, desc = "resume" }
-)
-vim.keymap.set(
   "n", 
   "<leader>gp", 
   ":Gitsigns preview_hunk<CR>", 
@@ -18,15 +12,10 @@ vim.keymap.set(
   "<leader>gt",
   ":Gitsigns toggle_current_line_blame<CR>",
   {})
-  vim.keymap.set('i', '<C-c>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-    vim.keymap.set('i', '<C-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
-    vim.keymap.set('i', '<C-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
-    vim.keymap.set('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
-    vim.keymap.set('n', '<C-1>', function() return vim.fn['codeium#Chat']() end, { expr = true, silent = true })
 
 local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<M-k>' ,':MoveLine 1<CR>', opts)
-vim.keymap.set('n', '<M-j>' ,':MoveLine -1<CR>', opts)
+vim.keymap.set('n', '<M-j>' ,':MoveLine 1<CR>', opts)
+vim.keymap.set('n', '<M-k>' ,':MoveLine -1<CR>', opts)
 vim.keymap.set('n', '<A-h>' ,':MoveWord -1<CR>', opts)
 vim.keymap.set('n', '<A-l>' ,':MoveWord 1<CR>', opts)
 
